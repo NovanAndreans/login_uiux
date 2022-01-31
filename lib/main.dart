@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:login_uiux/views/LoginPage.dart';
-import 'package:login_uiux/views/SweetAlert.dart';
+import 'package:login_uiux/views/Auth/LoginPage.dart';
+import 'package:login_uiux/views/Auth/RegisterPage.dart';
 
 void main() {
   runApp(const MyApp());
-  String title = "Sweet Alert";
-  Color bgColor = Colors.blue;
-  Color fgColor = Colors.white;
-  IconData icLogo = Icons.star_border;
 }
 
 class MyApp extends StatelessWidget {
@@ -18,11 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'UI/UX',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const SwalFire(),
+      home: const LoginPage(),
     );
   }
 }

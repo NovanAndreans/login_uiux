@@ -38,6 +38,7 @@ dependencies:
   flutter_slidable: ^1.2.0
   calendar_calendar: ^1.0.0
   flutter_analog_clock: ^0.1.1
+  font_awesome_flutter: ^9.2.0
 
 dev_dependencies:
   flutter_test:
@@ -62,6 +63,7 @@ flutter:
   uses-material-design: true
   assets:
     - logo.png
+    - clashRoyale.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -5,6 +5,12 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:login_uiux/views/Auth/LoginPage.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_uiux/views/ProfilePage.dart';
+import 'package:login_uiux/views/plugins/Bootstrap/Bootstrap_Alert.dart';
+import 'package:login_uiux/views/plugins/Bootstrap/Bootstrap_InputText.dart';
+import 'package:login_uiux/views/plugins/Bootstrap/Bootstrap_Layout.dart';
+import 'package:login_uiux/views/plugins/Bootstrap/Bootstrap_Modal.dart';
+import 'package:login_uiux/views/plugins/Bootstrap/Bootstrap_Select.dart';
+import 'package:login_uiux/views/plugins/Bootstrap/Bootstrap_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key key }) : super(key: key);
@@ -21,7 +27,7 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-      
+        
             // Navbar
             Container(
               color: Colors.blue,
@@ -56,15 +62,15 @@ class _HomePageState extends State<HomePage> {
                 Slidable(
                    // Specify a key if the Slidable is dismissible.
                       key: const ValueKey(0),
-      
+        
                       // The start action pane is the one at the left or the top side.
                       startActionPane: ActionPane(
                         // A motion is a widget used to control how the pane animates.
                         motion: const DrawerMotion(),
-      
+        
                         // A pane can dismiss the Slidable.
                         // dismissible: DismissiblePane(onDismissed: () {}),
-      
+        
                         // All actions are defined in the children parameter.
                         children: const [
                           // A SlidableAction can have an icon and/or a label.
@@ -84,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                           )
                         ],
                       ),
-      
+        
                       // The end action pane is the one at the right or the bottom side.
                       endActionPane: const ActionPane(
                         motion: DrawerMotion(),
@@ -107,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       ),
-      
+        
                       // The child of the Slidable is what the user sees when the
                       // component is not dragged.
                       child: const ListTile(title: Text('Social Media')),
@@ -216,8 +222,18 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CircleAvatar(child: Icon(Icons.ramen_dining)),
-                            CircleAvatar(child: Icon(Icons.fastfood))
+                            GestureDetector(child: CircleAvatar(child: Icon(Icons.ramen_dining)), onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BootstrapInput()));
+                            },),
+                            GestureDetector(child: CircleAvatar(child: Icon(Icons.fastfood)), onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BootstrapAlert()));
+                            },)
                           ],
                         ),
                         SizedBox(
@@ -226,8 +242,18 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CircleAvatar(child: Icon(Icons.dining)),
-                            CircleAvatar(child: Icon(Icons.restaurant))
+                            GestureDetector(child: CircleAvatar(child: Icon(Icons.dining)), onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BootstrapButton()));
+                            },),
+                            GestureDetector(child: CircleAvatar(child: Icon(Icons.restaurant)), onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BootstrapPage()));
+                            },)
                           ],
                         ),
                         SizedBox(
@@ -236,8 +262,18 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            CircleAvatar(child: Icon(Icons.free_breakfast)),
-                            CircleAvatar(child: Icon(Icons.emoji_food_beverage))
+                            GestureDetector(child: CircleAvatar(child: Icon(Icons.free_breakfast)), onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BootstrapModal()));
+                            },),
+                            GestureDetector(child: CircleAvatar(child: Icon(Icons.emoji_food_beverage)), onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => BootstrapSelect()));
+                            },)
                           ],
                         ),
                       ],
@@ -322,7 +358,7 @@ class _HomePageState extends State<HomePage> {
                   ),
           ),
           // end content
-
+      
           // footer
           Container(
             width: 500,
